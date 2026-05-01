@@ -1,6 +1,3 @@
-# MediScan AI - Frontend
-
-This is the **React frontend** for MediScan AI, an AI-powered medical risk prediction app.
 
 ## Getting Started
 
