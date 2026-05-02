@@ -1,6 +1,3 @@
-# MediScan AI — Frontend
-
-This is the **React frontend** for MediScan AI, an AI-powered medical risk prediction app.
 
 ## Getting Started
 
@@ -31,17 +28,7 @@ http://localhost:5173
 
 ---
 
-## Frontend Tech Stack
 
-- React + TypeScript
-- Vite
-- React Router (for navigation)
-
-## Backend Tech Stack
-
-- WIP
-
----
 
 ## Features (Planned)
 
@@ -52,8 +39,3 @@ http://localhost:5173
 - SHAP explanation display
 - AI-generated health report
 
----
-
-## ⚠️ Disclaimer
-
-This project is for **educational purposes only** and is not a medical diagnosis tool.
