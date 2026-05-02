@@ -1,10 +1,10 @@
-
 ## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/FawazBinSaleem/mediscan-frontend.git
+git clone https://github.com/FawazBinSaleem/MediScan.git
+
 cd mediscan-frontend
 ```
 
@@ -28,8 +28,6 @@ http://localhost:5173
 
 ---
 
-
-
 ## Features (Planned)
 
 - Select disease (Diabetes, Heart, Kidney)
@@ -38,4 +36,3 @@ http://localhost:5173
 - Risk level visualization
 - SHAP explanation display
 - AI-generated health report
-
