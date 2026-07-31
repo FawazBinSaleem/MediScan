@@ -71,6 +71,36 @@ http://localhost:5173
 
 Target output: `0 = No Disease`, `1 = Disease`, with `predict_proba()` used to generate a % risk score for the frontend.
 
-*Diabetes and CKD models follow the same methodology and will be documented here once finalized.*
+### Diabetes Prediction
+
+**Dataset:** Pima Indians Diabetes dataset (768 patient records, female patients of Pima Indian heritage, age 21+)
+
+**Preprocessing pipeline:**
+- Treated biologically implausible zero values as missing data in `Glucose`, `BloodPressure`, `SkinThickness`, `Insulin`, and `BMI`
+- Applied median imputation for these columns, fit on training data only to prevent data leakage
+- Addressed class imbalance using SMOTE, applied inside cross-validation folds to avoid inflated accuracy estimates
+- Applied `StandardScaler` for Logistic Regression only (tree-based models are scale-invariant)
+
+**Model selection:** Logistic Regression, Random Forest, Gradient Boosting, and XGBoost were tuned via `GridSearchCV` (5-fold cross-validation, scored on F1 to balance precision/recall given class imbalance). Gradient Boosting performed best and was selected as the final model.
+
+**Performance (held-out test set):**
+| Metric | Score |
+|---|---|
+| Accuracy | 77.3% |
+| Precision | 64.2% |
+| Recall | 79.6% |
+| F1-score | 71.1% |
+| ROC-AUC | 82.0% |
+
+**Saved artifacts:** `ML_model/diabetes/`
+- `model.pkl` — trained Gradient Boosting pipeline (includes SMOTE step)
+- `impute_medians.pkl` — training-set medians for zero-value imputation, required for consistent preprocessing at inference time
+- `selected_features.pkl` — expected feature order 
+
+**Known limitation:** the Pima dataset consists exclusively of female patients. The model has not been validated on male patients, and one feature (`Pregnancies`) is not applicable to male users at all. Predictions for male users should be treated as unvalidated extrapolation rather than a clinically supported result.
+
+Target output: `0 = No Diabetes`, `1 = Diabetes`, with `predict_proba()` used to generate a % risk score for the frontend.
+
+
 
 ---
