@@ -1,0 +1,60 @@
+@reference "../index.css";
+
+.footer {
+  @apply border-t;
+
+  background: var(--surface-soft);
+  border-color: var(--border);
+}
+
+.footer-content {
+  @apply mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10;
+}
+
+.footer-main {
+  @apply flex flex-col justify-between gap-8 md:flex-row md:items-start;
+}
+
+.footer-about {
+  @apply max-w-md;
+}
+
+.footer-brand {
+  @apply inline-flex items-center gap-2;
+
+  color: var(--primary);
+}
+
+.footer-brand span {
+  @apply text-lg font-extrabold;
+
+  color: var(--text);
+  font-family: var(--font-heading);
+}
+
+.footer-description {
+  @apply mt-3 mb-0 text-sm leading-6;
+
+  color: var(--text-muted);
+}
+
+.footer-links {
+  @apply flex flex-wrap gap-x-6 gap-y-3;
+}
+
+.footer-links a {
+  @apply text-sm font-semibold transition;
+
+  color: #657069;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-disclaimer {
+  @apply mt-8 mb-0 border-t pt-6 text-xs leading-5;
+
+  color: #7a837d;
+  border-color: #d7ded8;
+}

@@ -1,0 +1,131 @@
+@reference "../index.css";
+
+.navbar {
+  @apply sticky top-0 z-50 border-b backdrop-blur-xl;
+
+  background: rgba(244, 246, 242, 0.88);
+  border-color: rgba(223, 229, 223, 0.8);
+}
+
+.navbar-content {
+  @apply mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10;
+}
+
+.navbar-brand {
+  @apply flex items-center gap-3;
+}
+
+.navbar-logo {
+  @apply flex h-10 w-10 items-center justify-center rounded-2xl text-white shadow-lg transition duration-300;
+
+  background: var(--primary);
+  box-shadow: 0 8px 24px rgba(6, 78, 59, 0.22);
+}
+
+.navbar-brand:hover .navbar-logo {
+  @apply -translate-y-0.5;
+}
+
+.navbar-title {
+  @apply mb-0 text-lg font-extrabold tracking-tight;
+
+  color: var(--text);
+  font-family: var(--font-heading);
+}
+
+.navbar-caption {
+  @apply -mt-0.5 mb-0 text-xs font-medium;
+
+  color: #768078;
+}
+
+.navbar-links {
+  @apply hidden items-center gap-1 md:flex;
+}
+
+.navbar-link {
+  @apply rounded-full px-4 py-2 text-sm font-semibold transition duration-300;
+
+  color: #657069;
+}
+
+.navbar-link:hover {
+  @apply bg-white/70;
+
+  color: var(--text);
+}
+
+.navbar-link-active {
+  @apply bg-white shadow-sm;
+
+  color: var(--primary);
+}
+
+.navbar-screening-button {
+  @apply hidden items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white shadow-lg transition duration-300 md:inline-flex;
+
+  background: var(--primary);
+  box-shadow: 0 10px 25px rgba(6, 78, 59, 0.18);
+}
+
+.navbar-screening-button:hover {
+  @apply -translate-y-0.5;
+
+  background: var(--primary-hover);
+}
+
+.navbar-menu-button {
+  @apply flex h-10 w-10 items-center justify-center rounded-xl border bg-white transition md:hidden;
+
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.navbar-menu-button:hover {
+  background: var(--surface-soft);
+}
+
+.navbar-mobile-menu {
+  @apply border-t px-5 py-4 md:hidden;
+
+  background: var(--background);
+  border-color: var(--border);
+}
+
+.navbar-mobile-content {
+  @apply mx-auto flex max-w-7xl flex-col gap-2;
+}
+
+.navbar-mobile-link {
+  @apply rounded-xl px-4 py-3 text-sm font-semibold transition;
+
+  color: #657069;
+}
+
+.navbar-mobile-link:hover {
+  @apply bg-white/70;
+}
+
+.navbar-mobile-link-active {
+  @apply bg-white shadow-sm;
+
+  color: var(--primary);
+}
+
+.navbar-mobile-actions {
+  @apply mt-2 grid grid-cols-2 gap-2;
+}
+
+.navbar-mobile-action {
+  @apply flex items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-bold;
+}
+
+.navbar-mobile-heart {
+  color: #9a3f36;
+  background: var(--heart-light);
+}
+
+.navbar-mobile-diabetes {
+  color: #17624f;
+  background: var(--diabetes-light);
+}

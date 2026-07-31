@@ -1,0 +1,9 @@
+@reference "../index.css";
+
+.page-shell {
+  @apply flex min-h-screen flex-col;
+}
+
+.page-shell-main {
+  @apply flex-1;
+}

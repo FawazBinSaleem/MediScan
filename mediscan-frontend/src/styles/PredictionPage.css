@@ -1,0 +1,31 @@
+@reference "../index.css";
+
+.prediction-page {
+  @apply mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10;
+}
+
+.prediction-icon {
+  @apply flex h-16 w-16 items-center justify-center rounded-3xl;
+}
+
+.prediction-icon-heart {
+  color: var(--heart);
+  background: var(--heart-light);
+}
+
+.prediction-icon-diabetes {
+  color: var(--diabetes);
+  background: var(--diabetes-light);
+}
+
+.prediction-title {
+  @apply mt-6 mb-4 text-4xl font-extrabold tracking-[-0.04em] sm:text-5xl;
+
+  color: var(--text);
+}
+
+.prediction-description {
+  @apply mb-0 text-base;
+
+  color: var(--text-muted);
+}

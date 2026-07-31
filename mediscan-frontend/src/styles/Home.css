@@ -1,0 +1,436 @@
+@reference "../index.css";
+
+.home {
+  @apply overflow-hidden;
+}
+
+.hero {
+  @apply relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-28;
+}
+
+.hero-content {
+  @apply relative z-10 max-w-3xl;
+}
+
+.hero-badge {
+  @apply mb-6 inline-flex items-center gap-2 rounded-full border bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.13em] shadow-sm backdrop-blur;
+  color: var(--primary);
+  border-color: var(--border);
+}
+
+.hero-title {
+  @apply mb-6 text-5xl font-extrabold leading-[1.03] tracking-[-0.055em] sm:text-6xl lg:text-7xl;
+  color: var(--text);
+}
+
+.hero-title span {
+  color: var(--primary);
+}
+
+.hero-description {
+  @apply mb-0 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  @apply mt-8 flex flex-col gap-3 sm:flex-row;
+}
+
+.primary-button,
+.secondary-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition duration-300;
+}
+
+.primary-button {
+  @apply text-white shadow-lg;
+  background: var(--primary);
+  box-shadow: 0 14px 32px rgba(6, 78, 59, 0.2);
+}
+
+.primary-button:hover {
+  @apply -translate-y-0.5;
+  background: var(--primary-hover);
+}
+
+.secondary-button {
+  @apply border bg-white/80;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.secondary-button:hover {
+  @apply -translate-y-0.5 bg-white shadow-sm;
+}
+
+.hero-note {
+  @apply mt-7 flex items-center gap-2 text-sm font-medium;
+  color: #68736c;
+}
+
+.hero-visual {
+  @apply relative mx-auto w-full max-w-lg;
+}
+
+.hero-visual::before {
+  content: "";
+  @apply absolute inset-6 -z-10 rounded-[2.5rem] blur-3xl;
+  background: rgba(110, 188, 159, 0.25);
+}
+
+.hero-visual-card {
+  @apply rounded-[2rem] border bg-white/85 p-6 shadow-2xl backdrop-blur-xl sm:p-8;
+  border-color: rgba(223, 229, 223, 0.85);
+  box-shadow: 0 30px 70px rgba(31, 61, 48, 0.15);
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.hero-visual-header {
+  @apply flex items-start justify-between gap-4;
+}
+
+.hero-visual-label {
+  @apply mb-1 text-xs font-bold uppercase tracking-[0.14em];
+  color: #718079;
+}
+
+.hero-visual-header h2 {
+  @apply mb-0 text-2xl font-extrabold tracking-tight;
+}
+
+.hero-visual-logo {
+  @apply flex h-11 w-11 items-center justify-center rounded-2xl text-white;
+  background: var(--primary);
+}
+
+.preview-meter {
+  @apply mt-8 flex items-center gap-5 rounded-3xl p-5;
+  background: #f2f6f3;
+}
+
+.preview-ring {
+  @apply flex h-24 w-24 shrink-0 items-center justify-center rounded-full;
+  background: conic-gradient(var(--diabetes) 0 72%, #dbe6df 72% 100%);
+  position: relative;
+}
+
+.preview-ring::after {
+  content: "";
+  @apply absolute h-[72px] w-[72px] rounded-full bg-white;
+}
+
+.preview-ring span {
+  @apply relative z-10 text-xl font-extrabold;
+  color: var(--text);
+}
+
+.preview-risk-label {
+  @apply mb-1 text-sm font-medium;
+  color: var(--text-muted);
+}
+
+.preview-risk-value {
+  @apply mb-0 text-2xl font-extrabold;
+  color: #b66a25;
+}
+
+.preview-bars {
+  @apply mt-7 space-y-4;
+}
+
+.preview-bar-row {
+  @apply grid grid-cols-[80px_1fr] items-center gap-4 text-sm font-semibold;
+  color: #536159;
+}
+
+.preview-bar-track {
+  @apply h-2 overflow-hidden rounded-full;
+  background: #e4ebe6;
+}
+
+.preview-bar-fill {
+  @apply h-full rounded-full;
+  background: var(--primary);
+}
+
+.preview-bar-fill-large {
+  width: 84%;
+}
+
+.preview-bar-fill-medium {
+  width: 62%;
+}
+
+.preview-bar-fill-small {
+  width: 46%;
+}
+
+.hero-decoration {
+  @apply pointer-events-none absolute -z-10 rounded-full blur-3xl;
+}
+
+.hero-decoration-left {
+  top: 2rem;
+  left: -8rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(137, 211, 182, 0.18);
+}
+
+.hero-decoration-right {
+  right: -9rem;
+  bottom: 0;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(232, 132, 120, 0.12);
+}
+
+.screenings-section,
+.how-section,
+.trust-section {
+  @apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+.screenings-section {
+  @apply py-16 sm:py-20;
+}
+
+.section-heading {
+  @apply max-w-2xl;
+}
+
+.section-heading-centered {
+  @apply mx-auto text-center;
+}
+
+.section-eyebrow,
+.trust-eyebrow {
+  @apply mb-4 text-xs font-bold uppercase tracking-[0.18em];
+  color: #547168;
+}
+
+.section-heading h2,
+.trust-card h2 {
+  @apply mb-4 text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl;
+  color: var(--text);
+}
+
+.section-heading > p:last-child,
+.trust-card > div:nth-child(2) > p:last-child {
+  @apply mb-0 text-base leading-7;
+  color: var(--text-muted);
+}
+
+.screening-grid {
+  @apply mt-10 grid gap-5 md:grid-cols-2;
+}
+
+.screening-card {
+  @apply flex min-h-80 flex-col justify-between rounded-[2rem] border bg-white p-7 shadow-sm transition duration-300 sm:p-8;
+  border-color: var(--border);
+}
+
+.screening-card:hover {
+  @apply -translate-y-1 shadow-xl;
+}
+
+.screening-card-heart:hover {
+  border-color: rgba(201, 96, 85, 0.42);
+  box-shadow: 0 24px 55px rgba(201, 96, 85, 0.12);
+}
+
+.screening-card-diabetes:hover {
+  border-color: rgba(37, 130, 107, 0.42);
+  box-shadow: 0 24px 55px rgba(37, 130, 107, 0.12);
+}
+
+.screening-card-top {
+  @apply flex items-start justify-between gap-4;
+}
+
+.screening-icon {
+  @apply flex h-16 w-16 items-center justify-center rounded-3xl transition duration-300;
+}
+
+.screening-card:hover .screening-icon {
+  transform: scale(1.04);
+}
+
+.screening-icon-heart {
+  color: var(--heart);
+  background: var(--heart-light);
+}
+
+.screening-icon-diabetes {
+  color: var(--diabetes);
+  background: var(--diabetes-light);
+}
+
+.screening-tag {
+  @apply rounded-full px-3 py-1.5 text-xs font-bold;
+}
+
+.screening-tag-heart {
+  color: #a14e45;
+  background: #fff2f0;
+}
+
+.screening-tag-diabetes {
+  color: #24735f;
+  background: #eaf7f2;
+}
+
+.screening-card h3 {
+  @apply mt-9 mb-3 text-2xl font-extrabold tracking-tight;
+  color: var(--text);
+}
+
+.screening-card p {
+  @apply mb-0 text-sm leading-6 sm:text-base;
+  color: var(--text-muted);
+}
+
+.screening-card-link {
+  @apply mt-8 inline-flex items-center gap-2 text-sm font-bold;
+  color: var(--primary);
+}
+
+.how-section {
+  @apply py-20 sm:py-24;
+}
+
+.steps-grid {
+  @apply mt-12 grid gap-5 md:grid-cols-3;
+}
+
+.step-card {
+  @apply relative rounded-3xl border bg-white p-7 shadow-sm;
+  border-color: var(--border);
+  opacity: 0;
+  animation: step-enter 500ms ease-out forwards;
+}
+
+.step-number {
+  @apply absolute right-6 top-6 text-5xl font-extrabold;
+  color: rgba(6, 78, 59, 0.08);
+}
+
+.step-icon {
+  @apply flex h-12 w-12 items-center justify-center rounded-2xl;
+  color: var(--primary);
+  background: var(--diabetes-light);
+}
+
+.step-card h3 {
+  @apply mt-7 mb-3 text-xl font-extrabold;
+  color: var(--text);
+}
+
+.step-card p {
+  @apply mb-0 text-sm leading-6;
+  color: var(--text-muted);
+}
+
+.trust-section {
+  @apply pb-20 pt-4 sm:pb-24;
+}
+
+.trust-card {
+  @apply grid items-center gap-6 rounded-[2rem] border p-7 sm:p-9 lg:grid-cols-[auto_1fr_auto];
+  color: white;
+  background: var(--primary);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(6, 78, 59, 0.2);
+}
+
+.trust-icon {
+  @apply flex h-14 w-14 items-center justify-center rounded-2xl;
+  color: var(--primary);
+  background: white;
+}
+
+.trust-eyebrow {
+  color: #a9d5c4;
+}
+
+.trust-card h2 {
+  color: white;
+}
+
+.trust-card > div:nth-child(2) > p:last-child {
+  color: #c8ddd5;
+}
+
+.trust-link {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition duration-300;
+  color: var(--primary);
+  background: white;
+}
+
+.trust-link:hover {
+  @apply -translate-y-0.5;
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes step-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-visual {
+    @apply max-w-2xl;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    @apply py-16;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .hero-visual-card {
+    @apply p-5;
+  }
+
+  .preview-meter {
+    @apply items-start;
+  }
+
+  .preview-ring {
+    width: 82px;
+    height: 82px;
+  }
+
+  .preview-ring::after {
+    width: 62px;
+    height: 62px;
+  }
+
+  .screening-card {
+    @apply min-h-72;
+  }
+
+  .trust-card {
+    @apply text-left;
+  }
+}
