@@ -101,6 +101,18 @@ Target output: `0 = No Disease`, `1 = Disease`, with `predict_proba()` used to g
 
 Target output: `0 = No Diabetes`, `1 = Diabetes`, with `predict_proba()` used to generate a % risk score for the frontend.
 
+## Backend (FastAPI)
+
+The backend is being built with **FastAPI**, structured by disease domain (`heart/`, `diabetes/`), each with its own router, Pydantic schema, and service layer that loads the trained model artifacts and runs predictions.
+
+**Status:**
+- ✅ Heart disease prediction — fully built and verified against real patient records (encoding, imputation, and prediction pipeline confirmed correct)
+- ⏳ Diabetes prediction — in progress
+- ⏳ SHAP explainability — planned
+- ⏳ Gemini API integration for plain-English health reports — planned
+
+See `mediscan-backend/README.md` for setup instructions and backend-specific details.
+
 
 
 ---
