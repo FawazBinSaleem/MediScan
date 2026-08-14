@@ -11,7 +11,7 @@ FastAPI backend for MediScan AI — serves multi-disease health risk predictions
 
 ## Project Structure
 
-\`\`\`
+```
 mediscan-backend/
 ├── src/
 │   ├── heart/
@@ -25,7 +25,6 @@ mediscan-backend/
 │   │       ├── selected_features.pkl
 │   │       └── categorical_cols.pkl
 │   ├── diabetes/              # Same structure as heart/ (in progress)
-│   ├── ckd/                   # Same structure as heart/ (in progress)
 │   ├── config.py              # App settings (reads .env via pydantic-settings)
 │   └── main.py                # App entrypoint, CORS setup, router registration
 ├── .env                       # Local environment config (not committed)
@@ -33,7 +32,7 @@ mediscan-backend/
 ├── .gitattributes             # Ensures .pkl files are treated as binary in Git
 ├── requirements.txt
 └── README.md
-\`\`\`
+```
 
 ## Setup
 
