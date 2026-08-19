@@ -1,0 +1,341 @@
+@reference "../index.css";
+
+.diabetes-page {
+  @apply pb-20;
+}
+
+.diabetes-header {
+  @apply border-b;
+  border-color: rgba(223, 229, 223, 0.8);
+
+  background:
+    radial-gradient(
+      circle at 85% 35%,
+      rgba(37, 130, 107, 0.14),
+      transparent 22rem
+    ),
+    transparent;
+}
+
+.diabetes-header-content {
+  @apply mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10;
+}
+
+.diabetes-back-link {
+  @apply mb-8 inline-flex items-center gap-2 text-sm font-bold transition;
+  color: var(--text-muted);
+}
+
+.diabetes-back-link:hover {
+  color: var(--primary);
+  transform: translateX(-2px);
+}
+
+.diabetes-heading-row {
+  @apply flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center;
+}
+
+.diabetes-heading-row > div:first-child {
+  @apply max-w-3xl;
+}
+
+.diabetes-eyebrow,
+.diabetes-form-eyebrow,
+.gender-gate-eyebrow {
+  @apply mb-3 text-xs font-bold uppercase tracking-[0.18em];
+  color: var(--diabetes);
+}
+
+.diabetes-heading-row h1 {
+  @apply mb-5 text-4xl font-extrabold tracking-[-0.045em] sm:text-5xl lg:text-6xl;
+  color: var(--text);
+}
+
+.diabetes-description {
+  @apply mb-0 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8;
+  color: var(--text-muted);
+}
+
+.diabetes-illustration {
+  @apply flex h-40 w-40 shrink-0 items-center justify-center rounded-[2.5rem] border;
+  color: var(--diabetes);
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(37, 130, 107, 0.2);
+  box-shadow: 0 20px 55px rgba(37, 130, 107, 0.12);
+}
+
+.diabetes-illustration svg {
+  animation: droplet-float 2.8s ease-in-out infinite;
+}
+
+.diabetes-content {
+  @apply mx-auto max-w-7xl px-5 pt-12 sm:px-8 lg:px-10;
+}
+
+.gender-gate-card {
+  @apply mx-auto max-w-3xl rounded-[2rem] border bg-white p-7 shadow-xl sm:p-9;
+  border-color: var(--border);
+  box-shadow: 0 25px 65px rgba(35, 59, 49, 0.1);
+}
+
+.gender-gate-icon {
+  @apply mb-6 flex h-14 w-14 items-center justify-center rounded-2xl;
+  color: var(--diabetes);
+  background: var(--diabetes-light);
+}
+
+.gender-gate-icon-warning {
+  color: #9a6730;
+  background: #fff1d5;
+}
+
+.gender-gate-card h2 {
+  @apply mb-4 text-3xl font-extrabold tracking-[-0.035em];
+  color: var(--text);
+}
+
+.gender-gate-notice {
+  @apply mb-0 text-base leading-7;
+  color: var(--text-muted);
+}
+
+.gender-question {
+  @apply mt-8 rounded-3xl border p-5 sm:flex sm:items-center sm:justify-between sm:gap-5;
+  border-color: var(--border);
+  background: #f7f9f7;
+}
+
+.gender-question p {
+  @apply mb-4 font-bold sm:mb-0;
+  color: var(--text);
+}
+
+.gender-actions {
+  @apply flex gap-3;
+}
+
+.gender-button {
+  @apply min-w-24 rounded-full px-5 py-2.5 text-sm font-bold transition duration-300;
+}
+
+.gender-button-yes {
+  @apply text-white;
+  background: var(--primary);
+}
+
+.gender-button-yes:hover {
+  @apply -translate-y-0.5;
+  background: var(--primary-hover);
+}
+
+.gender-button-no {
+  @apply border bg-white;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.gender-button-no:hover {
+  @apply -translate-y-0.5 shadow-sm;
+}
+
+.blocked-actions {
+  @apply mt-8 flex flex-col gap-3 sm:flex-row sm:justify-end;
+}
+
+.gate-primary-button,
+.gate-secondary-button {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold transition duration-300;
+}
+
+.gate-primary-button {
+  @apply text-white;
+  background: var(--primary);
+}
+
+.gate-primary-button:hover {
+  @apply -translate-y-0.5;
+  background: var(--primary-hover);
+}
+
+.gate-secondary-button {
+  @apply border bg-white;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.gate-secondary-button:hover {
+  @apply -translate-y-0.5 shadow-sm;
+}
+
+.diabetes-form-card {
+  @apply rounded-[2rem] border bg-white p-6 shadow-xl sm:p-8 lg:p-10;
+  border-color: var(--border);
+  box-shadow: 0 25px 65px rgba(35, 59, 49, 0.1);
+}
+
+.persistent-warning {
+  @apply mb-7 flex items-start gap-3 rounded-2xl border p-4;
+  color: #7d5425;
+  background: #fff8e8;
+  border-color: #f4daa6;
+}
+
+.persistent-warning svg {
+  @apply mt-0.5 shrink-0;
+}
+
+.persistent-warning p {
+  @apply mb-0 text-sm leading-6;
+}
+
+.diabetes-form-heading {
+  @apply flex flex-col justify-between gap-4 border-b pb-6 sm:flex-row sm:items-center;
+  border-color: var(--border);
+}
+
+.diabetes-form-heading h2 {
+  @apply mb-0 text-2xl font-extrabold tracking-tight sm:text-3xl;
+  color: var(--text);
+}
+
+.diabetes-field-count {
+  @apply w-fit rounded-full px-3 py-1.5 text-xs font-bold;
+  color: #17624f;
+  background: var(--diabetes-light);
+}
+
+.diabetes-form-grid {
+  @apply mt-8 grid gap-x-6 gap-y-6 md:grid-cols-2;
+}
+
+.form-group {
+  @apply flex flex-col gap-2;
+}
+
+.form-group label {
+  @apply text-sm font-bold;
+  color: #34423b;
+}
+
+.field-unit {
+  @apply ml-2 text-xs font-medium;
+  color: #859089;
+}
+
+.required-mark {
+  @apply ml-1;
+  color: #dc2626;
+}
+
+.form-group input {
+  @apply w-full rounded-2xl border bg-white px-4 py-3.5 text-sm outline-none transition duration-200;
+  color: var(--text);
+  border-color: #d8e0da;
+}
+
+.form-group input::placeholder {
+  color: #9ca69f;
+}
+
+.form-group input:hover {
+  border-color: #b9c8bf;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.08);
+}
+
+.diabetes-form-footer {
+  @apply mt-9 flex flex-col gap-6 border-t pt-7 lg:flex-row lg:items-center lg:justify-between;
+  border-color: var(--border);
+}
+
+.diabetes-form-note {
+  @apply flex max-w-2xl items-start gap-3 rounded-2xl p-4;
+  color: #53645b;
+  background: #f3f6f3;
+}
+
+.diabetes-form-note svg {
+  @apply mt-0.5 shrink-0;
+  color: var(--primary);
+}
+
+.diabetes-form-note p {
+  @apply mb-0 text-xs leading-5 sm:text-sm;
+}
+
+.diabetes-submit-button {
+  @apply inline-flex min-w-48 items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-lg transition duration-300;
+  background: var(--primary);
+  box-shadow: 0 12px 28px rgba(6, 78, 59, 0.2);
+}
+
+.diabetes-submit-button:hover {
+  @apply -translate-y-0.5;
+  background: var(--primary-hover);
+}
+
+.gate-enter {
+  animation: gate-enter 350ms ease-out both;
+}
+
+.form-enter {
+  animation: form-enter 400ms ease-out both;
+}
+
+@keyframes gate-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes form-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes droplet-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 640px) {
+  .diabetes-header-content {
+    @apply py-10;
+  }
+
+  .diabetes-illustration {
+    width: 120px;
+    height: 120px;
+    border-radius: 2rem;
+  }
+
+  .diabetes-content {
+    @apply pt-8;
+  }
+
+  .diabetes-form-card {
+    @apply p-5;
+  }
+}

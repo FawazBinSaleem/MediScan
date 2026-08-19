@@ -17,14 +17,11 @@ export default function Footer() {
               AI-assisted health risk predictions designed to present model
               results clearly and understandably.
             </p>
+            <p className="footer-description">
+              Made with ❤️ by Fawaz and Maaz.
+            </p>
           </div>
         </div>
-
-        <p className="footer-disclaimer">
-          MediScan is an educational portfolio project. Its predictions are not
-          a medical diagnosis and should not replace advice from a qualified
-          healthcare professional.
-        </p>
       </div>
     </footer>
   );
