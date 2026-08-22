@@ -24,7 +24,14 @@ mediscan-backend/
 │   │       ├── knn_imputer.pkl
 │   │       ├── selected_features.pkl
 │   │       └── categorical_cols.pkl
-│   ├── diabetes/              # Same structure as heart/ (in progress)
+│   ├── diabetes/
+│   │   ├── router.py          # POST /predict/diabetes endpoint
+│   │   ├── schemas.py         # Pydantic input schema (8 features)
+│   │   ├── service.py         # Preprocessing + prediction pipeline
+│   │   └── ml-models/         # Trained artifacts for diabetes
+│   │       ├── model.pkl
+│   │       ├── impute_medians.pkl
+│   │       └── selected_features.pkl
 │   ├── config.py              # App settings (reads .env via pydantic-settings)
 │   └── main.py                # App entrypoint, CORS setup, router registration
 ├── .env                       # Local environment config (not committed)
@@ -65,7 +72,7 @@ The prediction pipeline for each disease follows this order:
 
 1. Validate incoming request against the Pydantic schema
 2. Reorder input fields to match the exact order the model was trained on (`selected_features.pkl`)
-3. Run KNN imputation for any missing values
+3. Impute any missing/placeholder values
 4. Round categorical columns back to valid integer categories
 5. Run the trained model's `.predict()` and `.predict_proba()`
 6. Return a clean JSON response with prediction and confidence
@@ -76,7 +83,14 @@ The prediction pipeline for each disease follows this order:
 - ~83% cross-validated accuracy
 - KNN imputation and categorical rounding are applied at inference time
 - **Does not require scaled input.** A `StandardScaler` was fit during experimentation for a Logistic Regression comparison model, but the deployed Gradient Boosting model was trained on raw, unscaled feature values. The scaler artifact is kept for reference but is not applied before prediction.
-- Verified against real patient records from the source dataset with known outcomes — predictions confirmed correct
+- Pipeline verified end-to-end using sample records from the training dataset — predictions matched expected outcomes
+
+## Diabetes Model
+
+- Trained on the Pima Indians Diabetes dataset
+- ~77% cross-validated accuracy
+- `impute_medians.pkl` is a plain dict of per-feature median values (not a fitted sklearn transformer) — used to manually replace placeholder zero values in `Glucose`, `BloodPressure`, `SkinThickness`, `Insulin`, and `BMI` at inference time
+- Pipeline verified end-to-end using sample records from the training dataset — predictions matched expected outcomes
 
 ## API Endpoints
 
@@ -84,11 +98,9 @@ The prediction pipeline for each disease follows this order:
 |--------|-------------------|---------------------------------|----------------|
 | GET    | /health           | Health check                    | Live           |
 | POST   | /predict/heart    | Heart disease risk prediction   | Live, verified |
-| POST   | /predict/diabetes | Diabetes risk prediction        | In progress    |
-| POST   | /predict/ckd      | CKD risk prediction              | In progress    |
+| POST   | /predict/diabetes | Diabetes risk prediction        | Live, verified |
 
 ## Planned
 
 - SHAP integration for model explainability
-- Gemini API integration for plain-English health report generation
-- Diabetes prediction endpoints
+- Gemini API integration for plain-English health report generationgit status
